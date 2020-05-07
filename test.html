@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>테스트</title>
+    <style type="text/css">
+        table{border:1px solid #aaa;margin:20px;text-align:center;
+            font-weight: bold;font-size:20px}
+        td{border:1px solid #aaa;width:100px;height:100px}
+        .sel{background:#f00;color:#fff;font-weight: bold;}
+        .tr2{display: none;}
+    </style>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".tr1>td").mouseover(function(){
+                $(this).addClass("sel");
+                $(".tr2").slideDown('fast');
+            });
+            $(".tr1>td").mouseout(function(){
+                $(this).removeClass("sel")
+            });
+            $(".tr2").mouseout(function(){
+                $(this).slideUp('fast');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>* 이벤트</h2>
+    <table>
+        <tr class="tr1">
+            <td>#1</td><td>#2</td><td>#3</td>
+            <td>#4</td><td>#5</td><td>#6</td>
+        </tr>
+
+        <tr class="tr2">
+            <td>#7</td><td>#8</td><td>#9</td>
+            <td>#10</td><td>#11</td><td>#12</td>
+        </tr>
+    </table>
+</body>
+</html>

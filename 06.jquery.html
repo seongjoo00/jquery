@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>필터를 이용한 선택자</title>
+    <style type="text/css">
+    table{border:1px solid #aaa;margin:20px;text-align: center;
+            font-weight: bold;font-size:20px;}
+    td{border:1px solid #aaa;width:80px;height:80px}
+    .greenBG{background:#0f0}
+    .pinkBG{background:#f6f}
+    </style>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        //첫번째 행에 초록색 배경 적용
+        /* $("tr:first").addClass("greenBG");
+        $("tr:eq(0)").addClass("greenBG"); */
+        /* $("tr:lt(1)").addClass("greenBG"); */
+
+        //첫번째 tr의 첫번째 td에 초록색 배경적용
+        /* $("tr:first td:first").addClass("greenBG"); */
+        /* $("tr:first td:first").addClass("greenBG"); */
+
+        //짝수번째 tr에 pinkBG적용
+        /* $("tr:odd").addClass("pinkBG"); */
+        /* $("tr:not(tr:even)").addClass("pinkBG"); */
+
+        //첫번째 행 마지막 td에 pinkBG 적용
+        /* $("tr:first td:last").addClass("pinkBG"); //
+        첫번째 행은 first가 좋고 마지막은 eq보단 last가 좋음 중간의 칸의 갯수가 바뀌었을때 좋음*/
+        /* $("tr:eq(0) td:eq(9)").addClass("pinkBG"); */
+        
+        // 두번째 행의 세번째 셀 뒤로는 배경색을 핑크로 변경
+        /* $("tr:eq(1) td:gt(2),tr:gt(1)").addClass("pinkBG"); */
+        $("tr:gt(0) td:gt(2)").addClass("pinkBG");
+
+    });
+    </script>
+</head>
+<body>
+    <h2>* 필더를 이용한 요소 선택</h2>
+    <table>
+        <tr>
+            <td>#1</td><td>#2</td><td>#3</td>
+            <td>#4</td><td>#5</td><td>#6</td>
+            <td>#7</td><td>#8</td><td>#9</td>
+            <td>#10</td>
+        </tr>
+
+        <tr>
+            <td>#11</td><td>#12</td><td>#13</td>
+            <td>#14</td><td>#15</td><td>#16</td>
+            <td>#17</td><td>#18</td><td>#19</td>
+            <td>#20</td>
+        </tr>
+
+        <tr>
+            <td>#21</td><td>#22</td><td>#23</td>
+            <td>#24</td><td>#25</td><td>#26</td>
+            <td>#27</td><td>#28</td><td>#29</td>
+            <td>#30</td>
+        </tr>
+
+        <tr>
+            <td>#31</td><td>#32</td><td>#33</td>
+            <td>#34</td><td>#35</td><td>#36</td>
+            <td>#37</td><td>#38</td><td>#39</td>
+            <td>#40</td>
+        </tr>
+    </table>
+</body>
+</html>

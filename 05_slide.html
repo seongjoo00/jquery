@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>slide image</title>
+<style type="text/css">
+    img{width:1000px;height:300px}
+    ul,li{margin:0;padding:0;list-style:none}
+    a{color:#222;text-decoration:none;border:0 none}
+    
+    .gallery h2{position:absolute;left:-9999px;top:-9999px}
+    
+    .mask li{float:left}
+    .mask ul{position:relative;overflow:hidden}
+    .mask{overflow:hidden;margin:auto}
+    
+    .pager{text-align:center;font-size:30px}
+    .pager a:hover{color:#43e575}
+</style>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    /*
+    $(".pager a:eq(0)").click(function(){
+        $(".mask ul").animate({left:0});
+    });
+    $(".pager a:eq(1)").click(function(){
+        $(".mask ul").animate({left:-800});
+    });
+    $(".pager a:eq(2)").click(function(){
+        $(".mask ul").animate({left:-1600});
+    });
+    */
+    
+    /*
+    var img_width = $(".mask img").width();
+    $(".pager a:eq(0)").click(function(){
+        $(".mask ul").animate({left:0});
+    });
+    $(".pager a:eq(1)").click(function(){
+        $(".mask ul").animate({left:-img_width});
+    });
+    $(".pager a:eq(2)").click(function(){
+        $(".mask ul").animate({left:-img_width * 2});
+    });
+    */
+    
+    var img_width = $(".mask img").width();
+    
+    var len = $(".mask li").length;
+    // alert(len);
+    $(".mask ul").css({width:img_width * len});//이미지갯수만큼 늘어나야하기때문에 
+    $(".mask").css({width:img_width});//이미지만 보여야하니깐 overflow땜에
+    //여기는 이미지 크기가 바뀌면 자동으로 바뀌어주기위해서 넣은것
+    
+        $(".pager a").click(function(){ //a 클릭했을때 
+        var idx = $(this).index();//a의 순서 변수 클릭한순서를 알아내서
+        // alert(idx);
+        $(".mask ul").animate({left:-img_width * idx});//애니메이트를 주겠다
+    });
+    
+});
+</script>
+</head>
+
+<body>
+    <div class="gallery">
+        <h2>갤러리</h2>
+        <div class="mask">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/main_img1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/main_img2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/main_img3.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="pager">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

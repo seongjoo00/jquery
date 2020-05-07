@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    body,header,nav,div,ul,li{margin:0;padding:0}
+    ul,li{list-style:none;}
+    a{text-decoration:none;}
+    header{padding-top:80px;border-bottom:1px solid #333;height:40px}
+    .gnb h2{position:absolute;top:-9999px;left:-9999px}
+    .gnb>ul{width:1000px;height:40px;margin:auto;background:#eee}
+    .gnb>ul>li{font-size:20px;font-family:"나눔고딕";float:left;width:20%;height:40px;line-height:40px;text-align: center;}
+    .gnb>ul>li>a{display: block;height:40px}
+    .gnb ul ul{display: none;}
+
+    .gnb{position:relative}
+    .nav_bg{width:100%;height:240px;position:absolute;left:0px;top:41px;background:#eee;z-index: 1;display: none;}
+    .gnb>ul{position:relative;z-index:5;}
+    </style>
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /* $(".gnb>ul>li").mouseover(function(){
+                $(this).find("ul").stop().slideDown();
+            })
+            $(".gnb>ul>li").mouseOut(function(){
+                $(this).find("ul").stop().slideUp();
+            }); */
+
+            //마우스 엔터 마우스 리브
+            /* $(".gnb>ul>li").mouseenter(function(){
+                $(this).find("ul").stop().slideDown();
+            })
+            $(".gnb>ul>li").mouseleave(function(){
+                $(this).find("ul").stop().slideUp();
+            }); */
+
+            /* 드롭메뉴 전체가 내려옴 */
+            $(".gnb>ul>li").mouseenter(function(){
+                $(".gnb ul ul, .nav_bg").stop().slideDown(200);
+            })
+            $(".gnb>ul>li").mouseleave(function(){
+                $(".gnb ul ul, .nav_bg").stop().slideUp(200);
+            });
+
+            // ※주의사항: 전체메뉴 드롭다운할때는 주메뉴사이에 갭이 있으면 안됨
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="gnb">
+            <h2>주요메뉴</h2>
+                <ul>
+                    <li><a href="#">주메뉴</a>
+                        <ul>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">주메뉴</a>
+                        <ul>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">주메뉴</a>
+                        <ul>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">주메뉴</a>
+                        <ul>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">주메뉴</a>
+                        <ul>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                            <li><a href="#">하위메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="nav_bg"></div>
+        </nav>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+</html>

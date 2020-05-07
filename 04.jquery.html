@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM 구조를 이용한 선택자</title>
+    <style type="text/css">
+    li{line-height: 40px;font-size:24px}
+    .brd{border:1px solid #f00}
+    </style>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js">
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        //모든 li 에 테두리 적용
+        /* $("li").addClass("brd"); */
+        //하위 계층에만 테두리 적용
+        /* $("body>ul>li").addClass("brd"); 
+            클래스 주는 방법도 있음
+        */
+        //손자 계층에만 테두리 적용
+        $("li>ul>li").addClass("brd");
+    });
+    </script>
+</head>
+<body>
+    <h2>요소 계층간 구조</h2>
+    <ul>
+        <li>ul의 하위 계층</li>
+        <li>ul의 하위 계층</li>
+        <li>ul의 하위 계층
+            <ul>
+                <li>여기는 손자계층</li>
+                <li>여기는 손자계층</li>
+            </ul>
+        </li>
+        <li>ul의 하위 계층</li>
+        <li>ul의 하위 계층</li>
+        <li>ul의 하위 계층</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    h2,p{padding:0;margin:0}
+    h2{font-size:14px;cursor: pointer;}
+    p{height:100px;background:#eee;display:none;}
+    </style>
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        //하나만 펼쳐지고 나머지는 접히는 효과
+        /* $(".qna1").click(function(){
+            $(".qna1 p").slideToggle();
+            $(".qna2 p").slideUp();
+            $(".qna3 p").slideUp();
+        });
+        $(".qna2").click(function(){
+            $(".qna2 p").slideToggle();
+            $(".qna1 p").slideUp();
+            $(".qna3 p").slideUp();
+        });
+        $(".qna3").click(function(){
+            $(".qna3 p").slideToggle();
+            $(".qna1 p").slideUp();
+            $(".qna2 p").slideUp();
+        }); */
+        //위에 코드 줄이기 장점: html이 추가되도 가능
+        $("div h2").click(function(){
+            /* $("div p").stop().slideUp();
+            $(this).next().stop().slideToggle();
+            //좋은태그는 아님 */
+            $("div p").not($(this).next()).slideUp();
+            $(this).next().slideToggle();
+            
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="qna1">
+        <h2>질문 1</h2>
+        <p>답변 1</p>
+    </div>
+
+    <div class="qna2">
+        <h2>질문 2</h2>
+        <p>답변 2</p>
+    </div>
+
+    <div class="qna3">
+        <h2>질문 3</h2>
+        <p>답변 3</p>
+    </div>
+
+    <div class="qna3">
+        <h2>질문 3</h2>
+        <p>답변 3</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab menu</title>
+    <style type="text/css">
+    img{width:800px;height:300px;}
+    ul,li{margin:0;padding:0;list-style:none;}
+    a{color:#222;text-decoration:none;border:0 none}
+
+    .gallery h2{position:absolute;left:-9999px;top:-9999px}
+
+    .mask li{float:left}
+    .mask ul{position:relative;overflow: hidden;width:2400px}
+    .mask{overflow: hidden;margin: auto;width:800px}
+
+    .pager{text-align: center;font-size: 30px;}
+    .pager a:hover{color:#43e575}
+</style>
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        /* $(".pager a:eq(0)").click(function(){
+           $(".mask ul").animate({left:0});
+        });
+        $(".pager a:eq(1)").click(function(){
+           $(".mask ul").animate({left:-800});
+        });
+        $(".pager a:eq(2)").click(function(){
+           $(".mask ul").animate({left:-1600});
+        }); */
+
+        /* 이미지의 width값 알아내서 슬라이드 */
+        /* var img_width = $(".mask img").width();
+
+        $(".pager a:eq(0)").click(function(){
+           $(".mask ul").animate({left:-img_width*0});
+        });
+        $(".pager a:eq(1)").click(function(){
+           $(".mask ul").animate({left:-img_width*1});
+        });
+        $(".pager a:eq(2)").click(function(){
+           $(".mask ul").animate({left:-img_width*2});
+        }); */
+        var img_width = $(".mask img").width();
+
+        var len = $(".mask li").length;
+        $(".mask ul").css({width:img_width*len});
+        $(".mask").css({width:img_width});
+        
+        $(".pager a").click(function(){
+            var idx = $(this).index();
+            $(".mask ul").animate({left:-img_width*idx});
+        });
+    });
+</script>
+</head>
+
+<body>
+    <div class="gallery"></div>
+    <h2>갤러리</h2>
+        <div class="mask">
+            <ul>
+                <li>
+                    <a href="#"><img src="images/main_img1.jpg"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/main_img2.jpg"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/main_img3.jpg"></a>
+                </li>
+            </ul>
+        
+
+            <div class="pager">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

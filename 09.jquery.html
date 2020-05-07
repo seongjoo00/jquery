@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>basics</title>
+    <style type="text/css">
+    body{font-size:26px;}
+    #pop{width:300px;height:400px;position:absolute;left:50px;top:50px;background:#993;display: none;}
+    </style>
+
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /* hide */
+            $("#pop>a").click(function(){
+                $("#pop").hide();
+            });
+
+            /* show */
+            $("a:first").click(function(){
+                $("#pop").show();
+            });
+
+            /* toggle */
+            $("a:eq(1)").click(function(){
+                $("#pop").toggle();
+            
+            if($(this).text()=="감추기"){
+                $(this).text("보이기");
+            }else{
+                $(this).text("감추기");
+            }
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="#">보이기</a>
+    <a href="#">바꾸기</a>
+    <div id="pop">
+        <a href="#">감추기</a>
+    </div>
+</body>
+</html>

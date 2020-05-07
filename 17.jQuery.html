@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div,h2,p{margin:0;padding:0}
+    
+    .tabs{width:400px;height:330px;position:relative;border:1px solid #999}
+    
+    .tab1{width:400px;position:absolute;left:0;top:32px}
+    .tab1 h2{line-height:30px;border:1px solid #aaa;width:80px;background:#eee;text-align:center;box-sizing:border-box;position:absolute;left:0;top:-32px}
+    .tab1 p{height:300px}
+    
+    .tab2{width:400px;position:absolute;left:0;top:32px}
+    .tab2 h2{line-height:30px;border:1px solid #aaa;width:80px;background:#eee;text-align:center;box-sizing:border-box;position:absolute;left:80px;top:-32px}
+    .tab2 p{height:300px;display:none}
+    
+    .tab3{width:400px;position:absolute;left:0;top:32px}
+    .tab3 h2{line-height:30px;border:1px solid #aaa;width:80px;background:#eee;text-align:center;box-sizing:border-box;position:absolute;left:160px;top:-32px}
+    .tab3 p{height:300px;display:none}
+    </style>
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /* $(".tap1 h2").click(function(){
+                $(".tap1 p").show();
+                $(".tap2 p").hide();
+                $(".tap3 p").hide();
+            });
+            $(".tap2 h2").click(function(){
+                $(".tap1 p").hide();
+                $(".tap2 p").show();
+                $(".tap3 p").hide();
+            });
+            $(".tap2 h2").click(function(){
+                $(".tap1 p").hide();
+                $(".tap2 p").hide();
+                $(".tap3 p").show();
+            }); */
+            $(".tabs h2").click(function(){
+                $(this).next().show();
+                $(".tabs p").not($(this).next()).hide();
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab1">
+            <h2>1</h2>
+            <p><a href="#">1111</a></p>
+        </div>
+        <div class="tab2">
+            <h2>2</h2>
+            <p><a href="#">22222</a></p>
+        </div>
+        <div class="tab3">
+            <h2>3</h2>
+            <p><a href="#">33333</a></p>
+        </div>
+    </div>
+</body>
+</html>

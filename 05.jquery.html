@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>형제 관계를 이용한 선택자</title>
+    <style type="text/css">
+    div,span{display: block;width:150px;height:150px;margin:10px;
+            background:#0099ff;float:left;font-size:16px}
+    div#small{width:100px;height:60px;font-size:14px;background:#fab}
+    .brd{border:5px solid red}
+    </style>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        // span 요소 바로 다음에 오는 div에만 스타일 적용
+        /* $("span+div").addClass("brd"); *///selector 방법 둘다 동생들만 선택
+        /* $("span").next().addClass("brd"); //mothod방법,
+        next()=다음,prev()=이전,parent()=부모,children()=자식,find("element")=밑에어떤요소
+        */
+        
+
+        //#prev 의 형제 요소 중 #prev 다음에 오는 div만 스타일 적용
+        $("span~div").addClass("brd");
+        /* $("#prev~div").addClass("brd"); //형제관계이여야함 동생들만 선택*/ 
+    });
+    </script>
+</head>
+<body>
+    <div>DIV</div>
+    <span id="prev">SPAN#PREV</span>
+    <div>#PREV의 형제 DIV</div>
+    <div>#PREV의 형제 DIV
+        <div id="small">후손 DIV#SMALL</div>
+    </div>
+    <span>#PREV의 형제 SPAN</span>
+    <div>#PREV의 형제 DIV</div>
+</body>
+</html>

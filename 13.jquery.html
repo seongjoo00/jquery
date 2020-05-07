@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    body{overflow-y: scroll;}
+    .wrap{height:661px;background:url(images/content.jpg) no-repeat center;
+    position:relative;top:70px}/* relative추가 */
+    .adv{background:#a9e3f9 url(images/banner.jpg) no-repeat center;height:70px;
+    position:absolute;width:100%}/* absolute 추가 */
+    .adv a{display: block;width:38px;height:38px;background:url(images/close.jpg) no-repeat;
+    text-indent: -9999px;position:absolute;right:16px;top:16px}
+    </style>
+
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(function(){
+            $(".adv a").click(function(){
+               /*  $(".adv").slideUp(); */
+                $(".wrap").animate({top:0})
+            })
+        })
+        });
+</script>
+</head>
+<body>
+    <!-- banner -->
+    <div class="adv">
+        <a href="#">닫기</a>
+    </div>
+    <div class="wrap">
+    <header></header>
+    <main></main>
+    <footer></footer>
+    </div>
+</body>
+</html>

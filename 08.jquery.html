@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>이벤트</title>
+    <style type="text/css">
+    table{border:1px solid #aaa;margin:20px;text-align:center;
+        font-weight: bold;font-size:20px}
+    td{border:1px solid #aaa;width:100px;height:100px}
+    .sel{background:#f00;color:#fff;font-weight: bold;}
+    </style>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           /*  $("td:first").addClass("sel"); */
+
+            /* js : obj.eventHander = function(){};
+            jq : $(selector).event(function(){}); */
+
+            /* $("td:first").click(function(){
+                $("td:first").addClass("sel")
+            }); */
+
+            /* $("td:eq(0)").mouseover(function(){
+                $("td:eq(0)").addClass("sel");
+            });
+            $("td:eq(0)").mouseout(function(){
+                $("td:eq(0)").removeClass("sel");
+            });
+
+            $("td:eq(1)").mouseover(function(){
+                $("td:eq(1)").addClass("sel");
+            });
+            $("td:eq(1)").mouseout(function(){
+                $("td:eq(1)").removeClass("sel");
+            });
+
+            $("td:eq(2)").mouseover(function(){
+                $("td:eq(2)").addClass("sel");
+            });
+            $("td:eq(2)").mouseout(function(){
+                $("td:eq(2)").removeClass("sel");
+            });
+
+            $("td:eq(3)").mouseover(function(){
+                $("td:eq(3)").addClass("sel");
+            });
+            $("td:eq(3)").mouseout(function(){
+                $("td:eq(3)").removeClass("sel");
+            });
+
+            $("td:eq(4)").mouseover(function(){
+                $("td:eq(4)").addClass("sel");
+            });
+            $("td:eq(4)").mouseout(function(){
+                $("td:eq(4)").removeClass("sel");
+            }); */
+
+            //hover = mouseover + mouseout
+            $("td").hover(function(){$(this).addClass("sel");
+            },function(){
+                $(this).removeClass("sel");
+            });
+
+            /* $("td").mouseover(function(){
+                $(this).addClass("sel");
+            });
+            $("td").mouseout(function(){
+                $(this).removeClass("sel");
+            }); */
+        });
+    </script>
+</head>
+<body>
+    <h2>* 이벤트</h2>
+    <table>
+        <tr>
+            <td>#1</td><td>#2</td><td>#3</td>
+            <td>#4</td><td>#5</td><td>#6</td>
+        </tr>
+    </table>
+</body>
+</html>
